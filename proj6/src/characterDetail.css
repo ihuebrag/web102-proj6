@@ -1,0 +1,76 @@
+/* CharacterDetail.css */
+
+.character-detail {
+    max-width: 800px; /* Limit the width of the detail view */
+    margin: 20px auto; /* Center the component */
+    padding: 20px; /* Add some padding */
+    background-color: hsl(0, 0%, 95%); /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+
+  .character-detail img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for image */
+    margin-bottom: 20px; /* Space below the image */
+  }
+  
+  .character-detail h2 {
+    font-size: 2em; /* Larger font for character name */
+    color: #c0392b; /* Marvel-themed color */
+    margin-bottom: 10px; /* Space below the title */
+  }
+  
+  .character-detail img {
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for image */
+    margin-bottom: 20px; /* Space below the image */
+  }
+  
+  .character-detail p {
+    font-size: 1.1em; /* Slightly larger font for description */
+    line-height: 1.5; /* Better line spacing */
+    color: #34495e; /* Dark gray for better readability */
+    margin-bottom: 20px; /* Space below description */
+  }
+  
+  .character-detail h3 {
+    font-size: 1.5em; /* Slightly smaller than character name */
+    margin-top: 20px; /* Space above comics title */
+    color: #2980b9; /* Another themed color */
+  }
+  
+  .character-detail ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+  }
+  
+  .character-detail li {
+    background-color: #ecf0f1; /* Light gray background for list items */
+    padding: 10px; /* Space inside list items */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between list items */
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  .character-detail li:hover {
+    background-color: #d5dbdb; /* Darker gray on hover */
+  }
+  
+  .character-detail button {
+    padding: 10px 15px; /* Button padding */
+    background-color: #2785ae; /* Green button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Standard font size */
+    margin-bottom: 20px; /* Space below button */
+  }
+  
+  .character-detail button:hover {
+    background-color: #216e91; /* Darker green on hover */
+  }
+  

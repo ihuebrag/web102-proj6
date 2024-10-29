@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import MD5 from 'crypto-js/md5'; // Import MD5 from crypto-js
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import MD5 from 'crypto-js/md5';
+import './CharacterList.css'; // Import the CSS file
 
 const PUBLIC_KEY = '0f0c818eb8ec3a84d65ce78a2cbfd897'; // Replace with your Marvel API public key
 const PRIVATE_KEY = 'fdacc7ba02bcba2f2f69bf81c841ad203ecf2f1b'; // Replace with your Marvel API private key
@@ -12,13 +14,13 @@ function CharacterList() {
   const [searchTerm, setSearchTerm] = useState('');
   const [minComics, setMinComics] = useState(0); // State for minimum comics filter
   const [maxComicsFilter, setMaxComicsFilter] = useState(Infinity); // Initialize max as Infinity
-
+  const navigate = useNavigate(); // Initialize useNavigate
 
   const getMarvelHash = (ts) => {
-    return MD5(ts + PRIVATE_KEY + PUBLIC_KEY).toString(); // Generate MD5 hash
+    return MD5(ts + PRIVATE_KEY + PUBLIC_KEY).toString();
   };
 
-  const fetchCharacters = async (query = '') => {
+  const fetchCharacters = async () => {
     setLoading(true);
     try {
       const timestamp = new Date().getTime();
@@ -28,7 +30,6 @@ function CharacterList() {
           apikey: PUBLIC_KEY,
           hash: hash,
           ts: timestamp,
-          nameStartsWith: query || undefined, // Search characters by name
           limit: 50,
         }
       });
@@ -41,7 +42,6 @@ function CharacterList() {
   };
 
   useEffect(() => {
-    // Initial fetch when component mounts
     fetchCharacters();
   }, []);
 
@@ -49,7 +49,6 @@ function CharacterList() {
     // Fetch characters whenever the search term changes
     fetchCharacters(searchTerm);
   }, [searchTerm]);
-
   // Filter characters based on comic appearance and search term
   const filteredCharacters = characters.filter(character => {
     const matchesSearch = character.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -68,8 +67,12 @@ function CharacterList() {
   const minComicsCount = totalCharacters ? Math.min(...comicCounts) : 0; // Renamed to avoid conflict
   const maxComics = totalCharacters ? Math.max(...comicCounts) : 0;
 
+  const handleCharacterClick = (id) => {
+    navigate(`/character/${id}`); // Navigate to character detail
+  };
+
   return (
-    <div>
+    <div className='character-list'>
       <input
         type="text"
         placeholder="Search Characters..."
@@ -111,7 +114,7 @@ function CharacterList() {
         <h2>Characters:</h2>
         <ul>
           {filteredCharacters.map(character => (
-            <li key={character.id}>
+            <li key={character.id} onClick={() => handleCharacterClick(character.id)} style={{ cursor: 'pointer' }}>
               {character.name} - Appears in {character.comics.available} comics
             </li>
           ))}

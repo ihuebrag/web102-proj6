@@ -1,0 +1,86 @@
+/* CharacterList.css */
+
+.character-list {
+    max-width: 800px; /* Limit the width of the character list */
+    margin: 20px auto; /* Center the component */
+    padding: 20px; /* Add some padding */
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .character-list h1 {
+    font-size: 2.5em; /* Larger font for the title */
+    color: #c0392b; /* Marvel-themed color */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+  }
+  
+  .character-list input[type="text"],
+  .character-list input[type="number"] {
+    padding: 10px; /* Padding inside the input */
+    width: calc(100% - 22px); /* Full width minus padding */
+    border: 1px solid #bdc3c7; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below the input */
+  }
+  
+  .character-list input[type="text"]:focus,
+  .character-list input[type="number"]:focus {
+    border-color: #2980b9; /* Border color on focus */
+    outline: none; /* Remove outline */
+  }
+  
+  .character-list label {
+    display: block; /* Make labels block-level for better spacing */
+    margin-bottom: 5px; /* Space below labels */
+    color: #34495e; /* Dark gray for better readability */
+  }
+  
+  .character-list button {
+    padding: 10px 15px; /* Button padding */
+    background-color: #27ae60; /* Green button */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 1em; /* Standard font size */
+    margin-top: 10px; /* Space above button */
+  }
+  
+  .character-list button:hover {
+    background-color: #219150; /* Darker green on hover */
+  }
+  
+  .character-list .character-info {
+    margin-top: 20px; /* Space above character info */
+  }
+  
+  .character-list h2 {
+    font-size: 1.5em; /* Slightly smaller than main title */
+    margin-bottom: 10px; /* Space below subtitle */
+    color: #2980b9; /* Themed color */
+  }
+  
+  .character-list p {
+    line-height: 1.5; /* Better line spacing */
+    color: #34495e; /* Dark gray for better readability */
+  }
+  
+  .character-list ul {
+    list-style-type: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+  }
+  
+  .character-list li {
+    background-color: #ecf0f1; /* Light gray background for list items */
+    padding: 10px; /* Space inside list items */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between list items */
+    transition: background-color 0.3s; /* Smooth background transition */
+  }
+  
+  .character-list li:hover {
+    background-color: #d5dbdb; /* Darker gray on hover */
+  }
+  
